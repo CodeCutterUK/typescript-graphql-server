@@ -2,20 +2,23 @@ import { makeExecutableSchema } from 'graphql-tools';
 
 import { demoSchema } from '../demo';
 
-import { rootQueryType } from './root-query';
+import { rootQuery } from './root-query';
+import { rootMutation } from './root-mutation';
 import { resolverMap } from './resolvers';
 
 const schemaDefinition = `
 schema {
-  query: RootQueryType
+  query: RootQuery,
+  mutation: RootMutation
 }
 `;
 
 export default makeExecutableSchema({
   typeDefs: [
     schemaDefinition,
-    rootQueryType,
+    rootQuery,
+    rootMutation,
     demoSchema
   ],
   resolvers: resolverMap
-});
+} as any);

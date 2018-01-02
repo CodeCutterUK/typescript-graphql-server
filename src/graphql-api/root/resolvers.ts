@@ -1,10 +1,16 @@
-import { demoResolver } from '../demo';
+import { demoResolver, demoMutation } from '../demo';
 
 export const resolverMap = {
-  RootQueryType: {
+  RootQuery: {
     demo() {
       return { };
     }
   },
-  ...demoResolver
+  RootMutation: {
+    demoMutation() {
+      return { };
+    }
+  },
+  ...demoResolver,
+  ...demoMutation
 };

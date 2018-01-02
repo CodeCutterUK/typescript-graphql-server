@@ -1,11 +1,13 @@
 import { configuration } from '../../configuration';
 
-function hellowWorldResolver(): string {
-  return "Hello World"
+import { getHelloWorldMessage } from './hello-world-message';
+
+function helloWorldResolver(): string {
+  return getHelloWorldMessage();
 }
 
 export const demoResolver = {
   Demo: {
-    helloWorld: hellowWorldResolver
+    helloWorld: helloWorldResolver
   }
 };

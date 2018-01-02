@@ -1,5 +1,5 @@
-export const rootQueryType = `
-type RootQueryType {
+export const rootQuery = `
+type RootQuery {
   demo: Demo
 }
 `;

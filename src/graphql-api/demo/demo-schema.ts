@@ -4,6 +4,13 @@ type Demo {
 }
 `;
 
+const demoMutation = `
+type DemoMutation {
+  updateHelloWorldMessage(message: String): Boolean
+}
+`;
+
 export const demoSchema = () => [
-  demo
+  demo,
+  demoMutation
 ];
